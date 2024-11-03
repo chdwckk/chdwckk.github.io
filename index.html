@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .textDisplay {
+            text-align: center;
+            color: pink;
+            font-size: 1.5em;
+            transform: scale(0);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .textDisplay.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 80vw;
+            height: 80vh;
+            overflow-y: auto; /* Enable scrolling if needed */
+        }
+        .image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Memories</h1>
+
+<div class="textDisplay" id="textDisplay"></div>
+
+<div class="container">
+    <div class="image" style="background-image: url('1.jpg');" onclick="showText('February 9,2024');"></div>
+    <div class="image" style="background-image: url('2.jpg');" onclick="showText('March 7,2024');"></div>
+    <div class="image" style="background-image: url('3.jpg');" onclick="showText('March 24,2024');"></div>
+    <div class="image" style="background-image: url('4.jpg');" onclick="showText('April 16,2024');"></div>
+    <div class="image" style="background-image: url('5.jpg');" onclick="showText('April 25,2024');"></div>
+    <div class="image" style="background-image: url('6.jpg');" onclick="showText('May 24,2024');"></div>
+    <div class="image" style="background-image: url('7.jpg');" onclick="showText('July 23,2024');"></div>
+    <div class="image" style="background-image: url('8.jpg');" onclick="showText('August 23,2024');"></div>
+    <div class="image" style="background-image: url('9.jpg');" onclick="showText('September 29,2024');"></div>
+    <div class="image" style="background-image: url('10.jpg');" onclick="showText('October 3,2024');"></div>
+</div>
+<script>
+    function showText(text) {
+        const textDisplay = document.getElementById('textDisplay');
+        textDisplay.innerText = text;
+        textDisplay.classList.add('active');
+
+
+    }
+</script>
+
+</body>
+</html>
